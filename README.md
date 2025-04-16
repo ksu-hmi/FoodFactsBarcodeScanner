@@ -10,9 +10,12 @@ Our application will have the following tabs:
  - Food Scanner
  - A tool that alerts if sodium intake exceeds the daily recommended amount of 1500 mg per day.
 
-## Getting Started
+## Features
 
-These instructions will guide you on how to run FoodFactsBarcodeScanner on your local machine.
+- Nutrition recommendation tool for those diagnosed with comorbidities.
+- Create user profile with the ability to select multiple comorbidities.
+- Food barcode scanner.
+- Generate health recommendations based on the scanned products nutrition label and the selected user profile comorbidities.
 
 ### Prerequisites
 
