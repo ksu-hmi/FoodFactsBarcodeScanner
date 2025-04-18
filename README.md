@@ -59,3 +59,4 @@ Please note that the Open Food Facts database may not include all barcodes. If t
 Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/YourUsername/FoodFactsBarcodeScanner/issues). 
 
 Nathan cleaned up some of the spelling in the original code
+Nathan changed it back to the way it was before
