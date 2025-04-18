@@ -11,7 +11,7 @@ def get_product_info(barcode):
             return {
                 'product_name': product.get('product_name'),
                 'ingredients_text': product.get('ingredients_text'),
-                'nutrients': product.get('nutrients'),
+                'nutriments': product.get('nutriments'),
             }
         else:
             return "No product found for this barcode."
