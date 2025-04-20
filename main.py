@@ -1,3 +1,16 @@
+class UserInterface:
+    @staticmethod
+    def main_menu():
+        print("Welcome to Thought for Food!")
+        print("\nMain Menu:")
+        print("1. Create or Edit User Profile")
+        print("2. Scan Product by Barcode")
+        print("3. View Previously Scanned Products")
+        print("4. Exit")
+
+        choice = int(input("Select an option (1 - 4): "))
+        return choice
+
 import requests
 
 def get_product_info(barcode):
