@@ -15,16 +15,21 @@ class UserInterface:
 
     @staticmethod
     def create_or_edit_profile():
+        print("Enter User Profile: ")
         name = input("Enter your name: ")
+        age = int(input("Enter your age: "))
+        gender = input("Enter your gender: ")
         hypertension_input = input("Do you have hypertension? (yes/no): ").strip().lower()
         has_hypertension = hypertension_input in ['yes', 'y']
 
         profile = {
             'name': name,
+            'age' : age,
+            'gender': gender,
             'hypertension': has_hypertension
         }
 
-        print(f"\nProfile created for {name}. Hypertension status: {'Yes' if has_hypertension else 'No'}")
+        print("\nProfile created for " + name + ". \nAge: " + str(age) + " \nGender: " + gender + " \nHypertension status: " + ("Yes" if has_hypertension else "No"))
         return profile
 
 def get_product_info(barcode):
