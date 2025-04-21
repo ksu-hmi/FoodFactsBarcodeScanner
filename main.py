@@ -96,7 +96,9 @@ def main():
                 print(f"\nProduct: {product_info['product_name']}")
                 print(f"Ingredients: {product_info['ingredients_text']}")
                 has_hypertension = user_profile.get('hypertension', False)
-                check_sodium_warning(product_info['nutriments'], has_hypertension)
+                recommendation_model= RecommendationModel()
+                evaluation = recommendation_model.evaluate_food_item(user_profile,product_info['nutriments'])
+                print(evaluation['message'])
             else:
                 print(product_info)
 
