@@ -60,6 +60,31 @@ def check_sodium_warning(nutriments, has_hypertension):
     else:
         print("\nSodium per serving data not available for this product.")
 
+class RecommendationModel:
+    def evaluate_food_item(self, user_profile, food_nutriments, display_sodium=True):
+        has_hypertension = user_profile.get("hypertension", False)
+        explanation = []
+        recommended = True
+
+        sodium_mg = food_nutriments.get('sodium_serving', 0) * 1000  # convert g to mg
+        fat = food_nutriments.get("saturated-fat_100g", 0)
+
+        # Check for hypertension
+        if display_sodium:
+            print("\nSodium per serving: " + str(round(sodium_mg, 2)) + " mg")
+        
+        if has_hypertension and sodium_mg > 500:
+            recommended = False
+         
+        if recommended:
+            return {
+                "recommended": True,
+            }
+        else:
+            return {
+                "recommended": False,
+            }
+
 def main():
     user_profile = {}
 
