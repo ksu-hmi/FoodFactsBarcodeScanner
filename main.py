@@ -50,16 +50,6 @@ def get_product_info(barcode):
     else:
         return "Error fetching product data."
 
-def check_sodium_warning(nutriments, has_hypertension):
-    if 'sodium_serving' in nutriments:
-        sodium_mg = nutriments['sodium_serving'] * 1000  # grams to mg
-        print(f"\nSodium per serving: {sodium_mg:.2f} mg")
-
-        if has_hypertension and sodium_mg > 500:
-            print("⚠️  Warning: High sodium content. Not recommended for those with hypertension.")
-    else:
-        print("\nSodium per serving data not available for this product.")
-
 class RecommendationModel:
     def evaluate_food_item(self, user_profile, food_nutriments, display_sodium=True):
         has_hypertension = user_profile.get("hypertension", False)
@@ -67,7 +57,6 @@ class RecommendationModel:
         recommended = True
 
         sodium_mg = food_nutriments.get('sodium_serving', 0) * 1000  # convert g to mg
-        fat = food_nutriments.get("saturated-fat_100g", 0)
 
         # Check for hypertension
         if display_sodium:
@@ -75,14 +64,19 @@ class RecommendationModel:
         
         if has_hypertension and sodium_mg > 500:
             recommended = False
+            explanation.append("⚠️  Warning: High sodium content. Not recommended for those with hypertension.")
+        elif sodium_mg == 0:
+            print("\nSodium per serving data not available for this product.")
          
         if recommended:
             return {
                 "recommended": True,
+                "message": "Great choice! You can eat this product. It's aligned with your health needs."
             }
         else:
             return {
                 "recommended": False,
+                "message": " and".join(explanation) + "." + "It would be best to find an alternative option becaue of the high sodium content of this product."
             }
 
 def main():
