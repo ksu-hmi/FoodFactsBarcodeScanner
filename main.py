@@ -13,6 +13,20 @@ class UserInterface:
         choice = int(input("Select an option (1 - 4): "))
         return choice
 
+    @staticmethod
+    def create_or_edit_profile():
+        name = input("Enter your name: ")
+        hypertension_input = input("Do you have hypertension? (yes/no): ").strip().lower()
+        has_hypertension = hypertension_input in ['yes', 'y']
+
+        profile = {
+            'name': name,
+            'hypertension': has_hypertension
+        }
+
+        print(f"\nProfile created for {name}. Hypertension status: {'Yes' if has_hypertension else 'No'}")
+        return profile
+
 def get_product_info(barcode):
     url = f"https://world.openfoodfacts.org/api/v0/product/{barcode}.json"
     response = requests.get(url)
@@ -31,28 +45,46 @@ def get_product_info(barcode):
     else:
         return "Error fetching product data."
 
-def check_sodium_warning(nutriments):
+def check_sodium_warning(nutriments, has_hypertension):
     if 'sodium_serving' in nutriments:
-        sodium_mg = nutriments['sodium_serving'] * 1000
+        sodium_mg = nutriments['sodium_serving'] * 1000  # grams to mg
         print(f"\nSodium per serving: {sodium_mg:.2f} mg")
 
-        if sodium_mg > 500:
-            print("Warning: A serving of this item is not recommended due to high sodium content.")
-        else:
-            print("Sodium content is within the recommended limit per serving (≤ 500 mg).")
+        if has_hypertension and sodium_mg > 500:
+            print("⚠️  Warning: High sodium content. Not recommended for those with hypertension.")
     else:
         print("\nSodium per serving data not available for this product.")
 
 def main():
-    barcode = input("Enter a product barcode: ")
-    product_info = get_product_info(barcode)
-    
-    if isinstance(product_info, dict):
-        print(f"\nProduct: {product_info['product_name']}")
-        print(f"Ingredients: {product_info['ingredients_text']}")
-        check_sodium_warning(product_info['nutriments'])
-    else:
-        print(product_info)
+    user_profile = {}
+
+    while True:
+        choice = UserInterface.main_menu()
+
+        if choice == 1:
+            user_profile = UserInterface.create_or_edit_profile()
+
+        elif choice == 2:
+            barcode = input("Enter a product barcode: ")
+            product_info = get_product_info(barcode)
+
+            if isinstance(product_info, dict):
+                print(f"\nProduct: {product_info['product_name']}")
+                print(f"Ingredients: {product_info['ingredients_text']}")
+                has_hypertension = user_profile.get('hypertension', False)
+                check_sodium_warning(product_info['nutriments'], has_hypertension)
+            else:
+                print(product_info)
+
+        elif choice == 3:
+            print("Previously scanned products feature is not yet implemented.")
+
+        elif choice == 4:
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid selection. Please try again.")
 
 if __name__ == '__main__':
     main()
