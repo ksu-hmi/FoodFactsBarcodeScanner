@@ -1,5 +1,7 @@
-import requests
+from pip._vendor import requests 
+from web_app import Flask, render_template, request
 
+#### Setting up the basic logic of the app #####
 class UserInterface:
     @staticmethod
     def main_menu():
@@ -79,6 +81,7 @@ class RecommendationModel:
                 "message": " and".join(explanation) + "." + "It would be best to find an alternative option becaue of the high sodium content of this product."
             }
 
+##### Main FoodFactsBarcode functionality ####
 def main():
     user_profile = {}
 

@@ -1,0 +1,36 @@
+<!-- this html block is brought to you by our prof thomas's github! woohoo!-->
+ 
+<html>
+  <head>
+      <title></title>
+      <title>Thought for Food</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+  </head>
+  <body>
+
+    <!DOCTYPE html>
+<html>
+  <head>
+      <title>Thought For Food</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Welcome to Thought For Food</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Welcome</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('barcode') }}">ScanBarcode</a></li>
+            <li><a href="{{ url_for('profile_result') }}">SetUpProfile</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+        {%block content%}
+        {%endblock%}
+    </div>
+  </body>
+</html>
