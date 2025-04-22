@@ -17,6 +17,15 @@ Our application will have the following tabs:
 - Food barcode scanner.
 - Generate health recommendations based on the scanned products nutrition label and the selected user profile comorbidities.
 
+## Some Prototype Flask components
+- Added an about page for web app
+- Added a barcode scan page
+- Layout template
+- Profile submission form
+- Welcome page
+
+These components are in their infancy stage; Zoe to come back fix some of the URL breaks later.
+
 ### Prerequisites
 
 Ensure you have Python 3.7 or later installed on your machine. You can check your Python version by running the following command in your command line:
