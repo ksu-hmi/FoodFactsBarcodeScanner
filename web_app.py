@@ -45,4 +45,4 @@ def run_this_page():
     app.run(debug=True, use_reloader=False)
 
 if __name__ == "__main__":
-    run_this_page()
+    app.run() #broken on so many levels. just like me. (i hate u python)
