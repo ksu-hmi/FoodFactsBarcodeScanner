@@ -17,6 +17,11 @@ Our application will have the following tabs:
 - Food barcode scanner.
 - Generate health recommendations based on the scanned products nutrition label and the selected user profile comorbidities.
 
+## New features added by Nathan
+- Saturated Fat content per serving will now display with user input
+- Daily max recommended by American Heart Association will display with user input
+- Food item will be recommended or not recommended based on both sodium content and saturated fat per serving for user with hypertension
+
 ## Some Prototype Flask components
 - Added an about page for web app
 - Added a barcode scan page
