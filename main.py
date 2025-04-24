@@ -4,7 +4,7 @@ from pip._vendor import requests
 class UserInterface:
     @staticmethod
     def main_menu():
-        print("Welcome to Thought for Food!")
+        print("\nWelcome to Thought for Food!")
         print("\nMain Menu:")
         print("1. Create or Edit User Profile")
         print("2. Scan Product by Barcode")
@@ -86,7 +86,8 @@ class RecommendationModel:
         else:
             return {
                 "recommended": False,
-                "message": " and".join(explanation) + "." + " It would be best to find an alternative option."
+                "message": " and" .join(explanation) + " \nIt would be best to find an alternative option."
+                "\nWhat to look for: when looking at nutriment content, look for items that contain less sodium and less saturated fat."
             }
 
 ##### Main FoodFactsBarcode functionality ####
