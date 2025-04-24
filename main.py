@@ -1,5 +1,4 @@
 from pip._vendor import requests 
-from web_app import Flask, render_template, request
 
 #### Setting up the basic logic of the app #####
 class UserInterface:
