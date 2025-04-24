@@ -63,13 +63,22 @@ class RecommendationModel:
         # Check for hypertension
         if display_sodium:
             print("\nSodium per serving: " + str(round(sodium_mg, 2)) + " mg")
-        
+
         if has_hypertension and sodium_mg > 500:
             recommended = False
             explanation.append("⚠️  Warning: High sodium content. Not recommended for those with hypertension.")
         elif sodium_mg == 0:
             print("\nSodium per serving data not available for this product.")
-         
+
+        # === Saturated Fat Logic Added ===
+        saturated_fat = food_nutriments.get('saturated-fat_serving', 0)
+        print("Saturated fat per serving: " + str(round(saturated_fat, 2)) + " g")
+        print("💡 Tip: Try to keep your total saturated fat intake under 13g per day.")
+
+        if saturated_fat > 5:
+            recommended = False
+            explanation.append("⚠️  Warning: High saturated fat content.")
+
         if recommended:
             return {
                 "recommended": True,
@@ -78,7 +87,7 @@ class RecommendationModel:
         else:
             return {
                 "recommended": False,
-                "message": " and".join(explanation) + "." + "It would be best to find an alternative option becaue of the high sodium content of this product."
+                "message": " and".join(explanation) + "." + " It would be best to find an alternative option."
             }
 
 ##### Main FoodFactsBarcode functionality ####
@@ -99,8 +108,8 @@ def main():
                 print(f"\nProduct: {product_info['product_name']}")
                 print(f"Ingredients: {product_info['ingredients_text']}")
                 has_hypertension = user_profile.get('hypertension', False)
-                recommendation_model= RecommendationModel()
-                evaluation = recommendation_model.evaluate_food_item(user_profile,product_info['nutriments'])
+                recommendation_model = RecommendationModel()
+                evaluation = recommendation_model.evaluate_food_item(user_profile, product_info['nutriments'])
                 print(evaluation['message'])
             else:
                 print(product_info)
