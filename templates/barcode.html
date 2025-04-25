@@ -2,10 +2,29 @@
 input barcode details capability-->
 <!--coming soon!!!! (maybe)-->
 
-{% extends layout.html %}
+{% extends 'layout.html' %}
 
-{% block title %}COMING SOON!!!{% endblock %}
+{% block title %}Scan Product{% endblock %}
 
 {% block content %}
-<p>This page is under construction. Please pardon our dust!</p>
+<h2>Scan a Product Barcode</h2>
+<form method="POST">
+    <label for="barcode">Enter Barcode:</label><br>
+    <input type="text" id="barcode" name="barcode" required><br><br>
+    <input type="submit" value="Check Product">
+</form>
+
+{% if result %}
+    <hr>
+    {% if result.error %}
+        <p><strong>Error:</strong> {{ result.error }}</p>
+    {% else %}
+        <h3>Product: {{ result.product_name }}</h3>
+        <p><strong>Ingredients:</strong> {{ result.ingredients }}</p>
+        <p><strong>Health Evaluation:</strong> {{ result.evaluation }}</p>
+    {% endif %}
+{% endif %}
+
 {% endblock %}
+
+<!---this doesnt work yet, but hey, it sure looks pretty, aint it?-->

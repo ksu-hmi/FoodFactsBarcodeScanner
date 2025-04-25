@@ -41,6 +41,4 @@ def submit_profile():
 
 if __name__ == "__main__":
     print("Starting up....give me a second....visit http://127.0.0.1:5000/ on your local browser.")
-    app.run(debug=True) #broken on so many levels. just like me. (i hate u python)
-    
-#print("This functionality is coming soon.....")
+    app.run(debug=True) 

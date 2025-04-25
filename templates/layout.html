@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Thought For Food{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
     <header>
@@ -13,9 +13,9 @@
                     <ul class="menu">
                         <li><a href="{{ url_for('home') }}">Welcome</a></li>
                         <li><a href="{{ url_for('about') }}">About</a></li>
-                        <li><a href="{{ url_for('barcode') }}">ScanBarcode</a></li>
+                        <li><a href="{{ url_for('barcode') }}">Scan Barcode</a></li>
                         <!-- maybe: set up profile here? page tbd -->
-                        <li><a href="{{ url_for('submit_profile') }}">SetUpProfile</a></li>
+                        <li><a href="{{ url_for('submit_profile') }}">Set Up Profile</a></li>
                     </ul>
                 </nav>
         </div>
