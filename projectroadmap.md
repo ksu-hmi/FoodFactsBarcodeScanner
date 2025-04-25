@@ -1,4 +1,4 @@
-**Update notes so they can be found by Dr Thomas
+*Update notes so they can be found by other classmates
 Functionality changes to code by Nathan
 -display sodium content of entered item per serving
 -display recommendation based on DASH diet
