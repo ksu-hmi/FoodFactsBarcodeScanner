@@ -86,8 +86,7 @@ class RecommendationModel:
         else:
             return {
                 "recommended": False,
-                "message": " and" .join(explanation) + " \nIt would be best to find an alternative option."
-                "\nWhat to look for: when looking at nutriment content, look for items that contain less sodium and less saturated fat."
+                "message": " and" .join(explanation) + " \nIt would be best to find an alternative option.\nWhat to look for: when looking at nutriment content, look for items that contain less sodium and less saturated fat."
             }
 
 ##### Main FoodFactsBarcode functionality ####

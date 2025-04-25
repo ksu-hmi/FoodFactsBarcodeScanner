@@ -1,9 +1,14 @@
 <!--coming soon!!!! (maybe)-->
-{% extends block content %}
+{% extends "layout.html" %}
 
-{% block title %}COMING SOON!!!{% endblock %}
+{% block title %}Profile Submitted{% endblock %}
 
 {% block content %}
-<p>This page is under construction. Please pardon our dust!</p>
+<div class="profile-submission">
+    <h2>Profile Submitted Successfully!</h2>
+    <p>Thank you for submitting your profile, {{ profile.name }}!</p>
+    <p>Age: {{ profile.age }}</p>
+    <p>Gender: {{ profile.gender }}</p>
+    <p>Hypertension Status: {{ 'Yes' if profile.hypertension else 'No' }}</p>
 </div>
 {% endblock %}
