@@ -9,14 +9,14 @@ Functionality changes to code by Nathan
 
 **Elisabeth will: Create a basic user profile, recommendatons after scanning barcode, and help resolve errors within the code:
 
-    1. Create main menu page.
-    2. Contributed to user profile foundation.
-    3. Contribute to user input capability for user profile set up.
-    4. Create food choice recommendations.
-    5. Generate recommendations based off user profile input.
-    6. Generate explanation to recommendation.
-    7. Update code based on team members commits to ensure code runs without errors.
-    8. Help resolve errors within the webflask .py file
+(completed) 1. Create main menu page.
+(completed) 2. Contributed to user profile foundation. 
+(completed) 3. Contribute to user input capability for user profile set up.
+(completed) 4. Create food choice recommendations.
+(completed) 5. Generate recommendations based off user profile input.
+(completed) 6. Generate explanation to recommendation.
+(on-going) 7. Update code based on team members commits to ensure code runs without errors.
+(on-going)8. Help resolve errors within the webflask .py file
 
 ** will utilize the following repositories:
 https://github.com/ksu-hmi/FoodFactsBarcodeScanner
