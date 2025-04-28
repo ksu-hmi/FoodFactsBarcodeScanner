@@ -22,14 +22,14 @@ Our application will have the following tabs:
 - Daily max recommended by American Heart Association will display with user input
 - Food item will be recommended or not recommended based on both sodium content and saturated fat per serving for user with hypertension
 
-## Some Prototype Flask components
+## ThoughtForFood Webflask
 - Added an about page for web app
 - Added a barcode scan page
 - Layout template
 - Profile submission form
 - Welcome page
 
-These components are in their infancy stage; Zoe to come back fix some of the URL breaks later.
+These components are in their infancy stage; Zoe to come back fix some of the URL breaks later and add further functionality to these tabs.
 
 ### Prerequisites
 
