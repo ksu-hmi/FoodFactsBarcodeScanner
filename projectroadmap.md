@@ -18,6 +18,19 @@ Functionality changes to code by Nathan
 (on-going) 7. Update code based on team members commits to ensure code runs without errors.
 (on-going)8. Help resolve errors within the webflask .py file
 
+** Functionality changes to code by Zoe:
+(completed) 1. Created based script.py file for a webflask based off Dr. Thomas's work in our github
+(completed) 2. Created the following weblink template coded in html with use of Dr Thomas's source code +  github_aboutme repos: Welcome Page
+(completed) 3. Created the following weblink template coded in html with use of Dr Thomas's source code +  github_aboutme repos: About Page
+(completed) 4. Created the following weblink template coded in html with use of Dr Thomas's source code +  github_aboutme repos: Submit Profile Form
+(completed) 5. Created the following weblink template coded in html with use of Dr Thomas's source code +  github_aboutme repos: general layout.html template
+(completed) 6. Customized the interface of the webflask font, color layout, and layout of links.
+(completed) 7. Using base code of Elisabeth's profile submission code, created a profile submission form in the webflask portal.
+(on-going) 8. Created the following weblink template coded in html with use of Dr Thomas's source code +  github_aboutme repos: Scan Barcode. Yet to be functional, this a work in progress by the team.
+(on-going) 9. Working on "Profile_Form.html" link to be a link that the submit_profile.html form to take you to.
+
 ** will utilize the following repositories:
 https://github.com/ksu-hmi/FoodFactsBarcodeScanner
 https://github.com/ksu-hmi/AI-HealthCompanion
+https://github.com/ksu-hmi/github_aboutme (html source code)
+https://github.com/ksu-hmi/pythonteachingcode (webflask and html source code)
