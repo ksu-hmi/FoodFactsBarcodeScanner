@@ -1,5 +1,6 @@
 ### Setting up Flask App 
 from flask import Flask, render_template, request
+import requests
 
 app = Flask(__name__)
 
@@ -18,9 +19,27 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route('/barcode/')
+@app.route('/barcode', methods=['GET', 'POST']) #create a request to call the external API
 def barcode():
-    return render_template("barcode.html")
+    result = None
+    if request.method == 'POST':
+        barcode = request.form.get('barcode')
+        try:
+            response = requests.get(f"https://world.openfoodfacts.org/api/v0/product/{barcode}.json")
+            data = response.json()
+            if data.get("status") == 1:
+                product = data["product"]
+                result = {
+                    'product_name': product.get("product_name", "Unknown"),
+                    'ingredients': product.get("ingredients_text", "No ingredients listed."),
+                    'error': None
+                }
+            else:
+                result = {'error': "Product not found."}
+        except Exception as e:
+            result = {'error': f"Error fetching product: {str(e)}"}
+
+    return render_template("barcode.html", result=result)
 
 @app.route('/submit-profile', methods=['GET','POST']) #making a profile submission portal
 def submit_profile():
