@@ -24,12 +24,10 @@ Our application will have the following tabs:
 
 ## ThoughtForFood Webflask
 - Added an about page for web app
-- Added a barcode scan page
+- Added a barcode scan page (functionality live!)
 - Layout template
 - Profile submission form
 - Welcome page
-
-These components are in their infancy stage; Zoe to come back fix some of the URL breaks later and add further functionality to these tabs.
 
 ### Prerequisites
 
